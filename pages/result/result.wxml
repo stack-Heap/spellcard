@@ -1,0 +1,35 @@
+<view class="result-area">
+  <view class='result-score'>
+    <view style='font-size:16px;'>总共得分</view>
+    <view>
+      <view style='display:inline-block;font-size:40px;margin-right:5px;'>{{resultScore}}</view>分
+    </view>
+  </view>
+  <view class='result-total'>
+    <view class='true-number'>
+      <view style='text-align:center;font-size:16px;'>答对题数</view>
+      <view style='text-align:center;font-size:24px;'>{{trueNumber}}</view>
+    </view>
+    <view class='total-number' style='border-left:1px solid #fff;'>
+      <view style='text-align:center;font-size:16px;'>总共题数</view>
+      <view style='text-align:center;font-size:24px;'>{{totalNumber}}</view>
+    </view>
+    <view class='average-time' style='border-left:1px solid #fff;'>
+      <view style='text-align:center;font-size:16px;'>平均时长</view>
+      <view style='text-align:center;font-size:14px;'>
+        <view style='display:inline-block;font-size:24px;margin-right:5px;'>{{averageTime}}</view>秒
+      </view>
+    </view>
+  </view>
+</view>
+<view class="exercise-detail">
+  <view style='font-size:16px;padding-left:10px;border-left:3px solid #b587e5;margin-top:10px;color:#666666;'>查看题目</view>
+  <view class='detail-list'>
+    <block wx:for="{{userExerciseInfo}}" wx:for-item="item">
+      <view class='detail-item-area'>
+        <view bindtap='reviewQuestion' data-number="{{item.number}}" data-exerciseType="{{item.exerciseType}}" class="detail-item {{item.result?'bg-true':'bg-false'}}">{{item.number}}</view>
+      </view>
+    </block>
+  </view>
+
+</view>

@@ -1,0 +1,79 @@
+.result-area {
+  width: 750rpx;
+  height: 300px;
+  background-color: #c591ec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-score {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #b87cdc;
+  border-radius: 50%;
+  background-color: #e4adf9;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.result-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  margin-top: 40px;
+  width: 750rpx;
+}
+
+.true-number, .total-number, .average-time {
+  width: 250rpx;
+  height: 50px;
+  word-spacing: 4px;
+}
+
+.exercise-detail {
+  width: 750rpx;
+  padding: 0 25rpx;
+  box-sizing: border-box;
+}
+
+.detail-list {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  margin-top: 20px;
+}
+
+.detail-item-area {
+  box-sizing: border-box;
+  background-color: white;
+  flex: 0 0 20%;
+  height: 65px;
+  padding: 10px;
+}
+
+.detail-item {
+  border-radius: 10px;
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+}
+
+.bg-true {
+  background-color: #48db89;
+}
+
+.bg-false {
+  background-color: #fc6c80;
+}

@@ -1,0 +1,40 @@
+.exercise-type-item {
+  width: 100%;
+  height: 80px;
+  margin-top: 20px;
+  border-radius: 10px;
+  line-height: 80px;
+  text-align: center;
+  color: #fff;
+  word-spacing: 4px;
+}
+
+.bg-1 {
+  background: url('https://zr.sste.com/web_resources/spell_card/type/1.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-2 {
+  background: url('https://zr.sste.com/web_resources/spell_card/type/2.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-3 {
+  background: url('https://zr.sste.com/web_resources/spell_card/type/3.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-4 {
+  background: url('https://zr.sste.com/web_resources/spell_card/type/4.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-5 {
+  background: url('https://zr.sste.com/web_resources/spell_card/type/5.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}

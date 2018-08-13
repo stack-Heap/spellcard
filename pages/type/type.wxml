@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="exercise-type-item bg-1" data-type='1' bindtap='startExercise' hover-stay-time="50" hover-class='click-scale'>
+    听录音，选{{type}}
+  </view>
+  <view class="exercise-type-item bg-2" data-type='2' bindtap='startExercise' hover-stay-time="50" hover-class='click-scale'>
+    听录音，拼{{type}}
+  </view>
+  <view class="exercise-type-item bg-3" data-type='3' bindtap='startExercise' hover-stay-time="50" hover-class='click-scale'>
+    看中文，选{{type}}
+  </view>
+  <view class="exercise-type-item bg-4" data-type='4' bindtap='startExercise' hover-stay-time="50" hover-class='click-scale'>
+    看中文，拼{{type}}
+  </view>
+  <view class="exercise-type-item bg-5" data-type='5' bindtap='startExercise' hover-stay-time="50" hover-class='click-scale'>
+    综合练习
+  </view>
+</view>

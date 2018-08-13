@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/auth/auth",
+    "pages/unit/unit",
+    "pages/card/card",
+    "pages/type/type",
+    "pages/word/word",
+    "pages/exercise/exercise",
+    "pages/result/result",
+    "pages/review/review",
+    "pages/dialog/dialog"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "牛津英语全能学习卡",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 10000
+  }
+}

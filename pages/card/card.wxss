@@ -1,0 +1,240 @@
+/* pages/card/card.wxss */
+
+.page-number {
+  width: 100%;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.card-item {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.desc-color-1 {
+  color: #f29200;
+}
+
+.desc-color-2 {
+  color: #ee7500;
+}
+
+.desc-color-3 {
+  color: #14a83c;
+}
+
+.desc-color-4 {
+  color: #33c2d5;
+}
+
+.color-1 {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/card-1.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.color-2 {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/card-2.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.color-3 {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/card-3.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.color-4 {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/card-4.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.word-collect {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 99;
+}
+
+.word-content {
+  font-size: 36px;
+  color: #fff;
+  margin: 0 5px;
+  text-align: center;
+  font-family: 'Times New Roman';
+}
+
+.word-translate {
+  font-size: 16px;
+  color: #fff;
+  margin: 10px 10px 0;
+  text-align: center;
+  font-family:'simsun';
+}
+
+.audio-play {
+  width: 25px;
+  height: 25px;
+  margin-top: 40px;
+}
+
+.card-action-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-action-area {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-action-desc {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.recording-1-play {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-1-play.png') no-repeat;
+  background-size: contain;
+}
+
+.recording-1-stop {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-1-stop.png') no-repeat;
+  background-size: contain;
+}
+
+.recording-2-play {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-2-play.png') no-repeat;
+  background-size: contain;
+}
+
+.recording-2-stop {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-2-stop.png') no-repeat;
+  background-size: contain;
+}
+
+.recording-3-play {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-3-play.png') no-repeat;
+  background-size: contain;
+}
+
+.recording-3-stop {
+  background: url('https://sj.tes-sys.com/web_resources/spell_card/card/recording-3-stop.png') no-repeat;
+  background-size: contain;
+}
+
+.card-content-list {
+  width: 100%;
+  height: 360px;
+  padding: 20px 10px 0;
+  box-sizing: border-box;
+}
+
+.card-content-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+
+.card-dialog-people {
+  width: 23%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-dialog-content {
+  color: #fff;
+  padding-left: 5px;
+  padding-top: 2px;
+  font-size: 14px;
+  font-family: 'Times New Roman';
+  width: 77%;
+  word-break: keep-all;
+}
+
+.card-people-name {
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 2px 1px;
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+  font-family: 'Times New Roman';
+  width: auto;
+  height: auto;
+  overflow: hidden;
+}
+
+.recording {
+  background-color: #4caf50d6;
+  border-radius: 50%;
+}
+
+.dialog-color-0 {
+  background-color: #bf80ec;
+}
+
+.dialog-color-1 {
+  background-color: #0cc07e;
+}
+
+.dialog-color-2 {
+  background-color: #6c84fc;
+}
+
+.dialog-color-3 {
+  background-color: #f47386;
+}
+
+.no-data-area {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+}
+
+.no-data-line {
+  width: 50px;
+  height: 0;
+  border: 1px solid #e3e3e3;
+}
+
+.no-data-tip {
+  flex: auto;
+}
+
+.current-page{
+  height: 100%;
+  opacity: 1;
+  transition: .4s;
+}
+.not-current-page{
+  height: 95%;
+  opacity: 0.4;
+  transition: .4s;
+}
+
+/* 字体斜体 */
+.font-italic{
+  font-style: italic;
+}

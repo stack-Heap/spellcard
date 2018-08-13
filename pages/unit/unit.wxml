@@ -1,0 +1,56 @@
+<view class="container" style="flex-direction:{{unitName!=='Review'?'column':'row'}};">
+  <block wx:if="{{unitName!=='Review'}}">
+    <view class='unit-item theme-vocabulary'>
+      <view class='unit-item-title color-1'>主题词汇</view>
+      <view class='navigator-list'>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/card/card?unit={{unitName}}&module={{moduleName}}&name=词汇朗读&exercise=主题词汇">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/1.png{{version}}' mode='widthFix'></image>
+        </navigator>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/type/type?unit={{unitName}}&module={{moduleName}}&type=词汇">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/2.png{{version}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='unit-item unit-phrase'>
+      <view class='unit-item-title color-2'>单元词块</view>
+      <view class='navigator-list'>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/card/card?unit={{unitName}}&module={{moduleName}}&name=词块朗读&exercise=单元词组">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/3.png{{version}}' mode='widthFix'></image>
+        </navigator>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/type/type?unit={{unitName}}&module={{moduleName}}&type=词块">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/4.png{{version}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='unit-item unit-sentence'>
+      <view class='unit-item-title color-3'>单元句子</view>
+      <view class='navigator-list'>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/card/card?unit={{unitName}}&module={{moduleName}}&name=句子朗读&exercise=单元句子">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/5.png{{version}}' mode='widthFix'></image>
+        </navigator>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/card/card?unit={{unitName}}&module={{moduleName}}&name=情景对话&exercise=情景对话">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/6.png{{version}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{unitName==='Review'}}">
+    <view class='unit-item theme-vocabulary'>
+      <view class='unit-item-title color-6'>主题词汇</view>
+      <view class='navigator-list'>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/exercise/exercise?unit={{unitName}}&module={{moduleName}}&type=词汇&exerciseType=5">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/2.png{{version}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+    <view class='unit-item unit-phrase' style='margin-left:10px;'>
+      <view class='unit-item-title color-5'>单元词块</view>
+      <view class='navigator-list'>
+        <navigator hover-class="click-scale" hover-stay-time="50" url="/pages/exercise/exercise?unit={{unitName}}&module={{moduleName}}&type=词块&exerciseType=5">
+          <image wx:if="{{staticUrl}}" src='{{staticUrl}}/unit/4.png{{version}}' mode='widthFix'></image>
+        </navigator>
+      </view>
+    </view>
+  </block>
+</view>

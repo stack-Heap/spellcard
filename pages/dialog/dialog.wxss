@@ -1,0 +1,139 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.dialog-scroll-area {
+  height: 85%;
+  background-color: #f4f4f4;
+}
+
+.dialog-detail-item {
+  border-bottom: 1px solid #e3e3e3;
+  padding: 20px 10px 10px;
+}
+
+.dialog-detail-item-show {
+  background-color: #fff;
+  transition: backgroud-color 1s;
+}
+
+.dialog-operate-area {
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+}
+
+.dialog-operate-item {
+  width: 20vw;
+  height: 100%;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #d8a4f4;
+}
+
+.dialog-content-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+}
+
+.card-dialog-people {
+  width: 20%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.card-dialog-content {
+  width: 80%;
+  color: #333;
+  padding: 0 10px;
+  margin-top: 2px;
+  font-family: 'Times New Roman';
+  font-size: 14px;
+}
+
+.card-people-name {
+  border-radius: 20px;
+  color: #fff;
+  padding: 2px 5px;
+  font-size: 14px;
+  max-width: 100%;
+  text-align: center;
+  position: relative;
+  font-family: 'Times New Roman';
+  overflow: hidden;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+.dialog-color-0 {
+  background-color: #bf80ec;
+}
+
+.dialog-color-1 {
+  background-color: #0cc07e;
+}
+
+.dialog-color-2 {
+  background-color: #6c84fc;
+}
+
+.dialog-color-3 {
+  background-color: #f47386;
+}
+
+.dialog-action-area {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 15vw;
+}
+
+.dialog-click-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: #d59cf3;
+  justify-content: space-around;
+}
+
+.icon-show {
+  height: auto;
+}
+
+.icon-hd {
+  height: 0;
+  overflow: hidden;
+}
+
+.recording-complete {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  right: -5px;
+}
+
+.recording {
+  background-color: #4caf50d6;
+  border-radius: 50%;
+}

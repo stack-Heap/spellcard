@@ -1,0 +1,71 @@
+<!-- /*
+ * @Author: 夏念军 
+ * @Date: 2018-04-13 16:54:09 
+ * @Last Modified by: 夏念军
+ * @Last Modified time: 2018-08-06 09:51:55
+ */ -->
+<view class="container">
+  <zan-dialog id="zan-dialog-test"></zan-dialog>
+  <view class="spell-card-info">
+    <view class="spell-card-img">
+      <image wx:if="{{staticUrl}}" mode="widthFix" src="{{bookCover}}"></image>
+    </view>
+    <view class="spell-card-desc">
+      <view class="spell-card-name">牛津英语</view>
+      <view class="spell-card-grade">{{unitStr}}</view>
+    </view>
+    <view class="spell-card-features" bindtap="showFeatures">
+      <view>特色功能</view>
+      <image src="https://sj.tes-sys.com/web_resources/spell_card/index/fuc.png" class="img-fuc" />
+    </view>
+  </view>
+  <view class="card-course-title">
+    <image wx:if="{{staticUrl}}" src='{{staticUrl}}/index/course-unit.png' style='width:25px;height:25px;margin-right: 10px;'></image>
+    <view>课程单元</view>
+  </view>
+  <view class="kind-list">
+    <block wx:for="{{list}}" wx:key="id" wx:for-index="idx">
+      <view class="kind-list__item">
+        <view id="{{item.id}}" data-index='{{idx}}' data-locked-flag="{{!hasPurchased}}" class="weui-flex kind-list__item-hd {{hasPurchased||!idx ? '' : 'kind-list__item-hd_locked'}}" bindtap="kindToggle">
+          <image wx:if="{{staticUrl}}" class="kind-list__img" src="{{staticUrl}}/index/unit-book.png"></image>
+          <view class="weui-flex__item">{{item.id}}</view>
+          <block wx:if="{{!idx}}">
+            <image wx:if="{{staticUrl}}" style='width:15px;height:10px;' class="kind-list__img" src="{{staticUrl}}/index/{{!item.open?'drop-down' : 'pull-up'}}.png"></image>
+          </block>
+          <block wx:if="{{idx&&hasPurchased}}">
+            <image wx:if="{{staticUrl}}" style='width:15px;height:10px;' class="kind-list__img" src="{{staticUrl}}/index/{{!item.open?'drop-down' : 'pull-up'}}.png"></image>
+          </block>
+          <block wx:if="{{idx&&!hasPurchased}}">
+            <image wx:if="{{staticUrl}}" style='width:15px;height:17px;' class="kind-list__img" src="{{staticUrl}}/index/module-lock.png"></image>
+          </block>
+        </view>
+        <view class="kind-list__item-bd {{item.open ? 'kind-list__item-bd_show' : ''}}">
+          <view class="weui-cells {{item.open ? 'weui-cells_show' : ''}}">
+            <block wx:for="{{item.pages}}" wx:for-index="idx" wx:for-item="page" wx:key="*this">
+              <block wx:if="{{hasPurchased ||!idx}}">
+                <navigator hover-class="click-scale-2" hover-stay-time="50" url="/pages/unit/unit?module={{item.id}}&unit={{page}}" class="weui-cell weui-cell_access">
+                  <view class="weui-cell__bd">{{page}}</view>
+                  <view wx:if="{{idx && !hasPurchased}}">
+                    <image wx:if="{{staticUrl}}" style='width:15px;height:15px;' class="kind-list__img" src="{{staticUrl}}/index/module-lock.png"></image>
+                  </view>
+                </navigator>
+              </block>
+              <block wx:elif="{{idx && !hasPurchased}}">
+                <view class="weui-cell weui-cell_access" bindtap="purchaseBook">
+                  <view class="weui-cell__bd">{{page}}</view>
+                  <view wx:if="{{idx && !hasPurchased}}">
+                    <image wx:if="{{staticUrl}}" style='width:15px;height:15px;' class="kind-list__img" src="{{staticUrl}}/index/module-lock.png"></image>
+                  </view>
+                </view>
+              </block>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='card-word-collect' bindtap='navigateToWord' hover-class="click-scale">
+    <image wx:if="{{staticUrl}}" src='{{staticUrl}}/index/word-collect.png' style='width:15px;height:15px;margin-right: 10px;'></image>
+    <view>我的单词本</view>
+  </view>
+</view>

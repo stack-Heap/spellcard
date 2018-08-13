@@ -1,0 +1,51 @@
+<view class="page-container">
+  <scroll-view scroll-y class="dialog-scroll-area">
+    <block wx:for="{{list}}" wx:for-item="item" wx:key="id" wx:for-index="idx">
+      <view class="dialog-detail-item {{item.open?'dialog-detail-item-show':''}}" bindtap="kindToggle" data-index='{{idx}}'>
+        <view class="dialog-content-area">
+          <view class="card-dialog-people">
+            <scroll-view scroll-x class="card-people-name {{item.dialogColor}}">
+              <text>{{item.name}}</text>
+            </scroll-view>
+            <block wx:if="{{item.complete}}">
+              <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/complete.png" class="recording-complete" />
+            </block>
+          </view>
+          <view class="card-dialog-content">{{item.content}}</view>
+        </view>
+        <view class="dialog-action-area {{item.open?'icon-show':'icon-hd'}}">
+          <view class="dialog-click-item">
+            <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/listen.png" style="width:12vw;height:12vw;" data-audioPath="{{item.audio}}" catchtap="singleListen"></image>
+            <view>听一听</view>
+          </view>
+          <view class="dialog-click-item">
+            <image class="{{isRecording?'recording':''}}" wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/read.png" style="width:12vw;height:12vw;" catch:longpress="singleRead" catch:touchend="singleReadEnd" data-recording-index="{{idx}}"></image>
+            <view>读一读</view>
+          </view>
+          <view class="dialog-click-item">
+            <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/{{isRecordPlaying?'pause':'my-recording'}}.png" style="width:12vw;height:12vw;" catchtap="singlePlay" data-play-index="{{idx}}"></image>
+            <view>我的录音</view>
+          </view>
+          <!-- <view class="dialog-click-item">
+            <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/reviews.png" style="width:12vw;height:12vw;"></image>
+            <view>评测</view>
+          </view> -->
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="dialog-operate-area">
+    <view class="dialog-operate-item">
+      <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/reset.png" style="width:6vh;height:6vh;" bindtap="reset"></image>
+      <view style='margin-top:5px;'>重置</view>
+    </view>
+    <view class="dialog-operate-item">
+      <image  class="{{isAllRecording?'recording':''}}" wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/play-all.png" style="width:6vh;height:6vh;" bind:longpress="startRecordingAll" bind:touchend='stopRecordingAll'></image>
+      <view style='margin-top:5px;'>全文朗读</view>
+    </view>
+    <view class="dialog-operate-item">
+      <image wx:if="{{staticUrl}}" src="{{staticUrl}}/dialog/{{isAllRecordPlaying?'pause':'my-recording'}}.png" style="width:6vh;height:6vh;" bindtap="playMyAudio"></image>
+      <view style='margin-top:5px;'>我的录音</view>
+    </view>
+  </view>
+</view>

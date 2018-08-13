@@ -1,0 +1,106 @@
+<view class="page-container">
+  <!-- 序号区域 -->
+  <view class='exercise-number'>{{currentNumber}}/{{wordList.length}}</view>
+  <!-- 添加到单词本区域 -->
+  <view class='add-word-area' bindtap='toggleCollect'>
+    <view>添加到我的单词本</view>
+    <image wx:if="{{staticUrl}}" src="{{staticUrl}}/exercise/{{hasCollected?'cancel-collect':'collect'}}.png" style='width:20px;height:20px;margin-left:5px;'></image>
+  </view>
+
+  <!-- 第一种题型 -->
+  <block wx:if="{{exerciseType==='1'}}">
+    <image wx:if="{{staticUrl}}" bindtap="playWordAudio" style="width:10vh;height:10vh;margin-top:10vh;" src='{{staticUrl}}/exercise/play-recording.png'></image>
+    <!-- 答案区域 -->
+    <view class='exercise-answer-area'>
+      <block wx:for="{{answer}}" wx:for-item="item" wx:for-index="idx">
+        <view class="exercise-answer-item bg-color-normal {{item.color}}" data-idx="{{idx}}" data-choose="{{item.word}}">{{item.word}}</view>
+      </block>
+    </view>
+  </block>
+
+  <!-- 第三种题型 -->
+  <block wx:if="{{exerciseType==='3'}}">
+    <view style="font-size:24px;margin-top:10vh;height:10vh;line-height:10vh;text-align:center;">{{questionContent}}</view>
+    <!-- 答案区域 -->
+    <view class='exercise-answer-area'>
+      <block wx:for="{{answer}}" wx:for-item="item" wx:for-index="idx">
+        <view class="exercise-answer-item bg-color-normal {{item.color}}" data-idx="{{idx}}" data-choose="{{item.word}}">{{item.word}}</view>
+      </block>
+    </view>
+  </block>
+
+  <!-- 第二种题型 -->
+  <block wx:if="{{exerciseType==='2'}}">
+    <image wx:if="{{staticUrl}}" bindtap="playWordAudio" style="width:10vh;height:10vh;margin-top:10vh;" src='{{staticUrl}}/exercise/play-recording.png'></image>
+    <view class="exercise-action-area">
+      <view class="input-area">
+        <block wx:if="{{hasAnswerd}}">
+          <image wx:if="{{staticUrl}}" src="{{staticUrl}}/exercise/{{isTrue?'true':'false'}}.png" style="width:25px;height:25px;"></image>
+          <view style="font-size:24px;margin-left:5px;" class="{{isTrue?'color-true':'color-false'}}">{{trueAnswer}}</view>
+        </block>
+        <block wx:if="{{!hasAnswerd}}" wx:for="{{letterShow}}" wx:for-index="idx" wx:for-item="letter">
+          <view class="input-item {{letter.class}}">{{letter.content}}</view>
+        </block>
+        <block wx:if="{{isExercising && !hasAnswerd}}">
+          <image wx:if="{{staticUrl}}" src="{{staticUrl}}/exercise/delete-word.png" style="width:28px;height:28px;margin-left:5px;"></image>
+        </block>
+      </view>
+      <block wx:if="{{!hasAnswerd}}">
+        <view class="exercise-tip color-normal">
+          {{isExercising?'点击删除键可删除已选字母':'按顺序点击完成拼写'}}
+        </view>
+      </block>
+      <block wx:if="{{hasAnswerd}}">
+        <view class="exercise-tip color-normal {{isTrue?'color-true':'color-false'}}">
+          {{isTrue?'单词拼写正确！请继续加油！':'单词拼写错误！请再接再厉！'}}
+        </view>
+      </block>
+    </view>
+    <view class='letter-click-area'>
+      <block wx:for="{{clickWordArr}}" wx:for-item="item">
+        <view class='letter-click-item'>
+          <view class="letter-click" data-click="{{item}}">{{item}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{hasAnswerd && !isTrue}}" class="true-answer-area">正确答案： {{trueAnswer}}</view>
+  </block>
+
+  <!-- 第四种题型 -->
+  <block wx:if="{{exerciseType==='4'}}">
+    <view style="font-size:24px;margin-top:10vh;height:10vh;line-height:10vh;text-align:center;">{{questionContent}}</view>
+    <view class="exercise-action-area">
+      <view class="input-area">
+        <block wx:if="{{hasAnswerd}}">
+          <image wx:if="{{staticUrl}}" src="{{staticUrl}}/exercise/{{isTrue?'true':'false'}}.png" style="width:25px;height:25px;"></image>
+          <view style="font-size:24px;margin-left:5px;" class="{{isTrue?'color-true':'color-false'}}">{{trueAnswer}}</view>
+        </block>
+        <block wx:if="{{!hasAnswerd}}" wx:for="{{letterShow}}" wx:for-index="idx" wx:for-item="letter">
+          <view class="input-item {{letter.class}}">{{letter.content}}</view>
+        </block>
+        <block wx:if="{{isExercising && !hasAnswerd}}">
+          <image wx:if="{{staticUrl}}" src="{{staticUrl}}/exercise/delete-word.png" style="width:28px;height:28px;margin-left:5px;"></image>
+        </block>
+      </view>
+      <block wx:if="{{!hasAnswerd}}">
+        <view class="exercise-tip color-normal">
+          {{isExercising?'点击删除键可删除已选字母':'按顺序点击完成拼写'}}
+        </view>
+      </block>
+      <block wx:if="{{hasAnswerd}}">
+        <view class="exercise-tip color-normal {{isTrue?'color-true':'color-false'}}">
+          {{isTrue?'单词拼写正确！请继续加油！':'单词拼写错误！请再接再厉！'}}
+        </view>
+      </block>
+    </view>
+    <view class='letter-click-area'>
+      <block wx:for="{{clickWordArr}}" wx:for-item="item">
+        <view class='letter-click-item'>
+          <view class="letter-click" data-click="{{item}}">{{item}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{hasAnswerd && !isTrue}}" class="true-answer-area">正确答案： {{trueAnswer}}</view>
+  </block>
+
+</view>

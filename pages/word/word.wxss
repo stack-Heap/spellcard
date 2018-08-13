@@ -1,0 +1,36 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.word-scroll-area {
+  height: 90%;
+  background-color: #f4f4f4;
+}
+
+.word-edit-area {
+  height: 10%;
+  display: flex;
+  background-color: #fff;
+  color: #d59cf3;
+  font-size: 12px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 40rpx;
+  border-bottom: 1px solid #e3e3e3;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Times New Roman';
+}

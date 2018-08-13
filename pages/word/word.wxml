@@ -1,0 +1,21 @@
+<view class="page-container">
+  <scroll-view scroll-y class="word-scroll-area" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <block wx:for="{{word}}" wx:for-item="wordItem" wx:for-index="idx">
+      <view class="word-item">
+        <block wx:if="{{isEditing}}">
+          <view style='padding:5px 15px 5px 0;display:flex;align-item:center;' bindtap='deleteWord' data-idx='{{idx}}'>
+            <image wx:if="{{staticUrl}}" style='width:20px;height:20px;' src='{{staticUrl}}/word/delete-word.png'></image>
+          </view>
+        </block>
+        <view>
+          <view>{{wordItem["单词"]}}</view>
+          <view>{{wordItem["释义"]}}</view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="word-edit-area" bindtap='startEdit'>
+    <image wx:if="{{staticUrl}}" src="{{staticUrl}}/word/{{isEditing?'cancel-edit':'edit'}}.png" style="width:40px;height:40px;"></image>
+    <view>{{isEditing?'取消编辑':'编辑'}}</view>
+  </view>
+</view>
