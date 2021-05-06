@@ -3,7 +3,7 @@ const bookConfig = require("/utils/config.js")
 
 App({
   onLaunch: function () {
-    // 展示本地存储能力 aaa
+    // 展示本地存储能力 aaa bbb
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
